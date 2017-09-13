@@ -5,6 +5,8 @@ import SignUp from './components/signup';
 import SignIn from './components/signin';
 import GlobalNav from './components/GlobalNav.js';
 import RandomUser from './components/RandomUser.js';
+import UserProfile from './components/UserProfile.js';
+import Home from './components/Home.js';
 
 
 class App extends Component {
@@ -13,9 +15,10 @@ class App extends Component {
       <Router>
         <div>
           <GlobalNav />
+          <Route exact path="/" component={Home}/>
           <Route exact path="/signup" component={SignUp}/>
           <Route exact path="/signin" component={SignIn}/>
-          <RandomUser />
+          <Route exact path="/user/:id" component={UserProfile}/>
         </div>
       </Router>
     );

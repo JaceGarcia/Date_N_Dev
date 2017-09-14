@@ -7,7 +7,7 @@ class RandomUser extends Component {
     constructor(){
         super()
         this.state = {
-            Users: []
+            user: {}
         }
     }
     componentWillMount(){
@@ -18,8 +18,8 @@ class RandomUser extends Component {
         try {
           const res = await axios.get('/api/users');
           console.log(res.data)
-          this.setState({Users: res.data});
-
+          this.setState({user: res.data});
+            return res.data
         }
         catch (err) {
           console.log(err)
@@ -38,11 +38,11 @@ class RandomUser extends Component {
         }
         return (
             <div>
-                {this.state.Users.map(user => (
+                
                     <div>
-                        <Link to={`/user/${user.id}`}><img style={imageStyles} src={user.image} alt=''/></Link> 
+                        <Link to={`/user/${this.state.user.id}`}><img style={imageStyles} src={this.state.user.image} alt=''/></Link> 
                     </div>
-                ))}
+                
             </div>
         )
     }

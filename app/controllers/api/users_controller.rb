@@ -1,9 +1,13 @@
 class Api::UsersController < ApplicationController
     def index
         puts 'route hit'
-        @users = User.all
+        @users = User.order("RANDOM()").first
         render json: @users
     end
+
+    def edit
+        @user = User.find(params[:id])
+    end    
     def show
         @user = User.find(params[:id])
         render json: @user
@@ -14,5 +18,11 @@ class Api::UsersController < ApplicationController
         render json: {
           message: 'User successfully deleted'
         }
+      end
+
+      private
+
+      def user_params
+
       end
 end

@@ -35,7 +35,7 @@ _signIn = async (e) => {
      return <Redirect to="/" />
    }
    return (
-     <div>
+    <div>
        <form onSubmit={this._signIn}>
          <div>
            <label htmlFor="email">E-mail: </label>
@@ -46,7 +46,7 @@ _signIn = async (e) => {
            <input onChange={this._handleChange} type="text" name="password" value={this.state.password} />
          </div>
          <button>Sign In</button>
-         <Link to="/signup">Sign Up</Link>
+         <button><Link to="/signup">Sign Up</Link></button>
        </form>
      </div>
    );

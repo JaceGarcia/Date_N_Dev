@@ -48,7 +48,7 @@ class UserProfile extends Component {
             <h3>Body Type: {this.state.user.body_type}</h3>
             <h3>Linked In: <a href={this.state.user.linked_in}>{this.state.user.linked_in}</a></h3>
             <h3>Bio: {this.state.user.bio}</h3>
-
+            
                 
             </div>
         )

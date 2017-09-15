@@ -87,7 +87,7 @@ class SignUpLogIn extends Component {
            <textarea style={buttonStyles} onChange={this._handleChange} type="text" name="bio" maxlength="255" value={this.state.bio} />
          </div>
          
-      <input style={buttonStyles} onClick={this._handleSubmit} type="submit" />
+           <input style={buttonStyles} onClick={this._handleSubmit} type="submit" />
 
        </form>
      </div>

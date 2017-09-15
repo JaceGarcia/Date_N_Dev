@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+    before_action :authenticate_user!
     def index
         puts 'route hit'
         @users = User.order("RANDOM()").first

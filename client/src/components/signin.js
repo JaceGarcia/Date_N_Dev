@@ -31,9 +31,9 @@ _signIn = async (e) => {
  }
 
  render() {
-   if (this.state.redirect){
-     return <Redirect to="/" />
-   }
+  if (this.state.redirect){
+    return <Redirect to="/" />
+  }
    return (
     <div>
        <form onSubmit={this._signIn}>

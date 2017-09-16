@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SignUp from './components/signup';
 import SignIn from './components/signin';
 import GlobalNav from './components/GlobalNav.js';
-import RandomUser from './components/RandomUser.js';
 import UserProfile from './components/UserProfile.js';
 import Home from './components/Home.js';
 import EditUser from './components/EditUser.js';

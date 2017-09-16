@@ -2,13 +2,21 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
-class SignUpLogIn extends Component {
+class SignUp extends Component {
  constructor(){
    super();
    this.state = {
        email: '',
        password: '',
        password_confirmation: '',
+       name: '',
+       gender: '',
+       linked_in: '',
+       age: '',
+       height: '',
+       body_type: '',
+       bio: '',
+       image: '',
        redirect: false
    }
  }
@@ -20,7 +28,6 @@ class SignUpLogIn extends Component {
  _handleSubmit = (e) => {
   e.preventDefault();
   axios.post("/auth", this.state).then((res) => {
-
       console.log("Success!");
   })
       .catch(err => console.log(err));
@@ -46,6 +53,10 @@ class SignUpLogIn extends Component {
    return (
      <div>
        <form onSubmit={this._signUp}>
+         <div>
+           <label htmlFor="name">name: </label>
+           <input style={buttonStyles} onChange={this._handleChange} type="text" name="name" value={this.state.name} />
+         </div>
          <div>
            <label htmlFor="email">E-mail: </label>
            <input style={buttonStyles} onChange={this._handleChange} type="text" name="email" value={this.state.email} />
@@ -84,7 +95,7 @@ class SignUpLogIn extends Component {
          </div>
          <div>
            <label htmlFor="bio">Bio: </label>
-           <textarea style={buttonStyles} onChange={this._handleChange} type="text" name="bio" maxlength="255" value={this.state.bio} />
+           <textarea style={buttonStyles} onChange={this._handleChange} type="text" name="bio" maxLength="255" value={this.state.bio} />
          </div>
          
            <input style={buttonStyles} onClick={this._handleSubmit} type="submit" />
@@ -95,4 +106,4 @@ class SignUpLogIn extends Component {
  }
 }
 
-export default SignUpLogIn;
+export default SignUp;

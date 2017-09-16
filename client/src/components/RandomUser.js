@@ -50,8 +50,9 @@ class RandomUser extends Component {
     }
     componentWillMount(){
         this._fetchUsers();
-      }
-    
+    }
+
+        
       _fetchUsers = async () => {
         try {
           const res = await axios.get('/api/users');
@@ -65,10 +66,13 @@ class RandomUser extends Component {
           return err.message
         } 
       }
-      _ReloadPage = (e) => {
+      _reloadPage = (e) => {
         e.preventDefault();
         window.location.reload()
-        
+      }
+      _sendLikeBack = (e) => {
+        console.log(e.currentTarget.dataset.userid)
+
       }
 
     render () {
@@ -90,8 +94,8 @@ class RandomUser extends Component {
                         <Link to={`/user/${this.state.user.id}`}><Thing style={imageStyles} src={this.state.user.image} alt=''/></Link> 
                     </Container>
                     <Container2>
-                        <Button2 onClick={this._ReloadPage}>Dislike</Button2>
-                        <Button onClick={this._ReloadPage}>Like</Button>
+                        <Button2 onClick={this._reloadPage}>Dislike</Button2>
+                        <Button onClick={this._sendLikeBack} data-swipee={this.state.user.id} >Like</Button>
                     </Container2>
             </div>
         )

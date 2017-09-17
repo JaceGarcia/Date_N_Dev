@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -38,6 +38,7 @@ class GlobalNav extends Component {
 
   _isLoggedIn = async () => {
     const response = await axios.get("/auth/validate_token");
+    console.log(response.data);    
     this.setState({
       user: response.data.data,
       loggedIn: response.data.success

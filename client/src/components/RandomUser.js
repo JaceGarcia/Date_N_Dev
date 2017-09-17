@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Like from './LikeButton.js';
 
 const Container = styled.div`
 display: flex;
@@ -45,14 +46,14 @@ class RandomUser extends Component {
     constructor(){
         super()
         this.state = {
-            user: {}
+            user: {},
         }
-    }
-    componentWillMount(){
+      }
+    
+      componentWillMount(){
         this._fetchUsers();
     }
 
-        
       _fetchUsers = async () => {
         try {
           const res = await axios.get('/api/users');
@@ -71,7 +72,7 @@ class RandomUser extends Component {
         window.location.reload()
       }
       _sendLikeBack = (e) => {
-        console.log(e.currentTarget.dataset.userid)
+        console.log(e.currentTarget.dataset.swipee)
 
       }
 
@@ -95,7 +96,7 @@ class RandomUser extends Component {
                     </Container>
                     <Container2>
                         <Button2 onClick={this._reloadPage}>Dislike</Button2>
-                        <Button onClick={this._sendLikeBack} data-swipee={this.state.user.id} >Like</Button>
+                        <Like onClick={this._sendLikeBack} data-swipee={this.state.user.id} />                   
                     </Container2>
             </div>
         )

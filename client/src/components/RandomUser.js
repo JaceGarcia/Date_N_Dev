@@ -96,7 +96,7 @@ class RandomUser extends Component {
                     </Container>
                     <Container2>
                         <Button2 onClick={this._reloadPage}>Dislike</Button2>
-                        <Like onClick={this._sendLikeBack} data-swipee={this.state.user.id} />                   
+                        <Like sendLike={this._sendLikeBack} data-swipee={this.state.user.id} />                   
                     </Container2>
             </div>
         )

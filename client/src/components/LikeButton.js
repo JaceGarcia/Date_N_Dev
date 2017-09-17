@@ -35,7 +35,9 @@ class LikeButton extends Component {
 
       _sendLikerBack = (e) => {
         console.log(e.currentTarget.dataset.swiper)
+		    this.props.sendLike(e)
       }
+      
       
       _isLoggedIn = async () => {
         const response = await axios.get("/auth/validate_token");

@@ -72,8 +72,7 @@ class RandomUser extends Component {
         window.location.reload()
       }
       _sendLikeBack = (e) => {
-        console.log(e.currentTarget.dataset.swipee)
-
+        console.log(this.state.user.id)
       }
 
     render () {

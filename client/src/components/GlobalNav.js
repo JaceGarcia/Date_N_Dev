@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -38,6 +38,7 @@ class GlobalNav extends Component {
 
   _isLoggedIn = async () => {
     const response = await axios.get("/auth/validate_token");
+    console.log(response.data);    
     this.setState({
       user: response.data.data,
       loggedIn: response.data.success
@@ -59,7 +60,7 @@ class GlobalNav extends Component {
             <h1>Date_N_Dev</h1>
           </Link>
           <div>
-          <span>Signed In As: <Link to={`/user/${this.state.user.id}`}>{this.state.user.email}</Link></span>
+          <span>Signed In As: <Link to={`/user/${this.state.user.id}`}>{this.state.user.id}</Link></span>
           <a href="/" onClick={this._logOut}> Log Out </a>
           </div>
         </Nav>

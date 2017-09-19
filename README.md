@@ -1,24 +1,38 @@
-# README
+Project2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Links
 
-Things you may want to cover:
+* Heroku Link: https://date-n-dev1.herokuapp.com/
 
-* Ruby version
+* TrelloBoard: https://trello.com/b/u7LmKAbh/datendev
 
-* System dependencies
+![alt text](https://i.imgur.com/hd8wGo0.png)
 
-* Configuration
+# Overview
 
-* Database creation
+Date_N_Dev is a way for developers to meet other developers
+# User Stories
 
-* Database initialization
+* Sign up
+* Login
+* Navigate to users page
+* Navigate to home page
+* Navigate to Profile
+* Navigate to Users Profile
+* Matches
+* Yes button
+# Stretch Goals-
 
-* How to run the test suite
+* Real time chat
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Technologies Used
+* Active record
+* CSS
+* Devise
+* React
+* imagur.com
+* Heroku
+* HTML 5
+* Rails
+* JavaScript
+* Postgreql

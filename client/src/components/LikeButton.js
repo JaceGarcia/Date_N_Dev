@@ -37,6 +37,8 @@ class LikeButton extends Component {
         console.log(e.currentTarget.dataset.swiper)
 		    this.props.sendLike(e)
       }
+
+   
       
       
       _isLoggedIn = async () => {
@@ -49,9 +51,13 @@ class LikeButton extends Component {
       };
 
     render () {
+      let currentUser = this.props.currrentUser
+      let userClicked = this.state.user.id
+      console.log(currentUser);
+      console.log(userClicked);
         return (
             <div>
-                <Button  onClick={this._sendLikerBack} data-swiper={this.state.user.id}> Like </Button>
+                <Button  onClick={this._storeMatch} data-swiper={this.state.user.id}> Like </Button>
             </div>
         )
     }

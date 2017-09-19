@@ -87,6 +87,8 @@ class RandomUser extends Component {
             display : "flex",
             justify_content: "center"       
         }
+        let currentUser = this.state.user.id
+        console.log(currentUser);        
         return (
             <div>
                 
@@ -95,7 +97,7 @@ class RandomUser extends Component {
                     </Container>
                     <Container2>
                         <Button2 onClick={this._reloadPage}>Dislike</Button2>
-                        <Like sendLike={this._sendLikeBack} data-swipee={this.state.user.id} />                   
+                        <Like currrentUser={this.state.user.id} sendLike={this._sendLikeBack} data-swipee={this.state.user.id} />                   
                     </Container2>
             </div>
         )

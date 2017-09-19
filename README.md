@@ -26,7 +26,7 @@ Date_N_Dev is a way for developers to meet other developers
 * Real time chat
 
 # Technologies Used
-* Active record
+* Activerecord
 * CSS
 * Devise
 * React
